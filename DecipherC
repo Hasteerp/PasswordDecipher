@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main (void)
+{
+int a; 
+printf ("Enter an encrypted 3-digit code: ");
+scanf("%d", &a);
+
+//Finding the digit at the hundred's place. For eg:- 352/100=3
+int hundplace= a/100;
+
+//Finding the digit at the tenth's place. For eg:- 352/10=35. Therefore, (352/10)-(3*10)=5
+int tenthplace= ((a/10)-(hundplace*10));
+
+//Finding the actual value of tenth place
+int finaltenthplace=9-tenthplace;
+
+//Finding the digit at the one's place. For eg:- 352/10=35. Therefore, 352-(352/10)*10=2
+int oneplace= a-((a/10)*10);
+
+
+printf("The real 3-digit code is: ");
+printf("%d",oneplace);
+printf("%d",finaltenthplace);
+printf("%d", hundplace);
+
+
+}
